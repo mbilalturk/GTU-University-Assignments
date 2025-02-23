@@ -1,0 +1,2 @@
+Office Chair,Brown,15.25,247931,175
+Sofa,White,124.50,179265,800

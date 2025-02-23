@@ -1,0 +1,339 @@
+#include <time.h>
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(51,49,47,45,43,41);
+#define R1 12
+#define B1 11
+#define Y1 13
+#define G1 10
+#define R2 3
+#define B2 4
+#define Y2 2
+#define G2 5
+#define green_lamb 7
+#define blue_lamb 8
+#define red_lamb 9
+#define yellow_lamb 6
+
+
+
+char str1[50];
+int str1_len = 0;
+char str2[50];
+int str2_len = 0;
+int score1= 0;
+int score2= 0;
+
+
+void lcd_clear()
+{
+  lcd.setCursor(0,0);
+  for (int i=0 ; 16>i ; i++)
+  {
+    lcd.print(" ");
+  }
+  lcd.setCursor(0,1);
+  for (int i=0 ; 16>i ; i++)
+  {
+    lcd.print(" ");
+  }
+}
+
+
+void lcd_print()
+{
+  lcd_clear();
+  lcd.setCursor(0,0);
+  lcd.print("Scoreboard");
+  lcd.setCursor(0,1);
+  lcd.print("P-1:");
+  lcd.setCursor(5,1);
+  lcd.print(score1);
+  lcd.setCursor(7,1);
+  lcd.print("P-2:");
+  lcd.setCursor(11,1);
+  lcd.print(score2);
+}
+
+void lcd_print2()
+{
+  lcd_clear();
+  lcd.setCursor(0,0);
+  lcd.print("Get ready!");
+}
+
+void lcd_print3(int num)
+{
+  lcd.setCursor(0,0);
+  lcd.print("For Player ");
+  lcd.setCursor(11,0);
+  lcd.print(num);  
+}
+
+void lcd_print4(char *puzzle){
+  lcd_clear();
+  lcd.setCursor(0,0);
+  lcd.print("Answer");
+  lcd.setCursor(0,1);
+  lcd.print(puzzle);
+  delay(5000);
+}
+
+void finish()
+{
+  lcd_clear();
+  lcd.setCursor(0,0);
+  if (score1 == score2)
+  {
+    lcd.print("Draw.");
+  }
+  else if (score1 > score2)
+  {
+    lcd.print("Player1 Won!!!!");
+  }
+  else
+  {
+    lcd.print("Player2 Won!!!!");
+  }
+}
+
+char * rndm(int len){
+    char *str = (char *)malloc(len+1);
+    randomSeed(analogRead(A3));
+    for (int i=0 ; len>i ; i++)
+    {
+        int num = random(0,4);
+        if (num == 0)
+        {
+            str[i] = 'R';
+        }
+        else if(num == 1)
+        {
+            str[i] = 'B';
+        }
+        else if(num == 2)
+        {
+            str[i] = 'G';
+        }
+        else str[i] = 'Y';
+    }
+    str[len] = '\0';
+    return str;
+}
+
+void turn_lamb(char *puzzle,int len,int x)
+{
+  //ledleri yakan kod
+  for (int i=0;i<len;i++){
+    if (puzzle[i]=='G' ){
+      digitalWrite(green_lamb,HIGH);
+      delay(500);
+      digitalWrite(green_lamb,LOW);
+      delay(500);
+
+    }
+    else if (puzzle[i]=='B' ){
+      digitalWrite(blue_lamb,HIGH);
+      delay(500);
+      digitalWrite(blue_lamb,LOW);
+      delay(500);
+    }
+    else if (puzzle[i]=='R' ){
+      digitalWrite(red_lamb,HIGH);
+      delay(500);
+      digitalWrite(red_lamb,LOW);
+      delay(500);
+    }
+    else
+    {
+      digitalWrite(yellow_lamb,HIGH);
+      delay(500);
+      digitalWrite(yellow_lamb,LOW);
+      delay(500);
+    }
+
+  }
+}
+
+void check1()
+{
+    if(digitalRead(R1) == LOW)
+     {
+        str1[str1_len] = 'R';
+        str1_len++;
+        delay(300);
+      }
+      else if(digitalRead(B1) == LOW)
+      {
+        str1[str1_len] = 'B';
+        str1_len++;
+        delay(300);
+      }
+      else if(digitalRead(Y1) == LOW)
+      {
+        str1[str1_len] = 'Y';
+        str1_len++;
+        delay(300);
+      }
+      else if(digitalRead(G1) == LOW)
+      {
+        str1[str1_len] = 'G';
+        str1_len++;
+        delay(300);
+      }
+}
+
+void check2()
+{
+      if(digitalRead(R2) == LOW)
+      {
+        str2[str2_len] = 'R';
+        str2_len++;
+        delay(300);
+      }
+      else if(digitalRead(B2) == LOW)
+      {
+        str2[str2_len] = 'B';
+        str2_len++;
+        delay(300);
+      }
+      else if(digitalRead(Y2) == LOW)
+      {
+        str2[str2_len] = 'Y';
+        str2_len++;
+        delay(300);
+      }
+      else if(digitalRead(G2) == LOW)
+      {
+        str2[str2_len] = 'G';
+        str2_len++;
+        delay(300);
+      }
+}
+
+void comparer (char *puzzle,int len){
+  if (str1_len == len)
+  {
+    int flag = 1;
+    for (int i=0 ; len>i ; i++)
+    {
+      if (puzzle[i] != str1[i])
+      {
+        flag = 0;
+        break;
+      }
+    }
+    if (flag) score1++;
+  }
+  if (str2_len == len)
+  {
+    int flag = 1;
+    for (int i=0 ; len>i ; i++)
+    {
+      if (puzzle[i] != str2[i])
+      {
+        flag = 0;
+        break;
+      }
+    }
+    if (flag) score2++;
+  }
+  lcd_print();
+  delay(5000);
+}
+
+void setup() {
+  Serial.begin(9600);
+  for (int i=0 ; 14>i ; i++)
+  {
+    digitalWrite(i,LOW);
+  }
+  for (int i=10 ; 14>i ; i++) 
+  {
+    pinMode(i,INPUT);
+    digitalWrite(i,HIGH);
+  }
+  for (int i=5 ;i>=2 ; i--)
+  {
+    pinMode(i, INPUT);
+    digitalWrite(i, HIGH);
+  }
+  lcd.begin(16,2);
+  lcd.setCursor(0,0);
+  lcd.print("Hold green");
+  lcd.setCursor(0,1);
+  lcd.print("to get ready");
+}
+
+void loop() {
+  while (digitalRead(G1) != LOW || digitalRead(G2) != LOW)
+  {
+
+  }
+  for (int level=0 ; 5>level ; level++)
+  {
+    lcd_print2();
+    delay(5000);
+    int len = 3+1*level;
+    char *puzzle = rndm(len);
+    lcd_clear();
+    turn_lamb(puzzle,len,(level+1)*100);
+    if (level %2 == 0)
+    {
+      for(int j = 0; j < 2; j++){
+        unsigned long time = millis();
+        delay(1000);
+        lcd_print3(j+1);
+        lcd.setCursor(0,1);      
+        lcd.print("Time left: ");
+        lcd.setCursor(13,1);
+          while ((millis()-time) <= 10000)
+          {
+            if (j == 0){
+            
+              check1();
+              lcd.setCursor(13,1);
+              lcd.print(10-((millis()-time)/1000));
+            }
+            else
+            {
+            check2();
+            lcd.setCursor(13,1);
+            lcd.print(10-((millis()-time)/1000));            
+            }
+          }
+      }
+    }
+    else
+    {
+        for(int j = 1; j >= 0; j--){
+        unsigned long time = millis();
+        delay(1000);
+        lcd_print3(j+1);
+        lcd.setCursor(0,1);      
+        lcd.print("Time left: ");
+        lcd.setCursor(13,1);
+          while ((millis()-time) <= 10000)
+          {
+            if (j == 0){
+            
+              check1();
+              lcd.setCursor(13,1);
+              lcd.print(10-((millis()-time)/1000));
+            }
+            else
+            {
+            check2();
+            lcd.setCursor(13,1);
+            lcd.print(10-((millis()-time)/1000));            
+            }
+          }
+      }
+    }
+    lcd_print4(puzzle);  
+    comparer(puzzle,len);
+    str1_len = 0;
+    str2_len = 0;
+    free(puzzle);
+  }
+  finish();
+}

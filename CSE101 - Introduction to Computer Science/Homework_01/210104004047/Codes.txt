@@ -1,0 +1,65 @@
+// 3- Run blinking led from Basic Examples
+
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+  delay(500);
+}
+
+// 4- Try Serial ASCII Table example
+
+int example = 33;
+
+void setup() {
+
+  Serial.begin(9600);
+  Serial.println("ASCII Table");
+}
+
+void loop() {
+
+  Serial.write(example);
+  
+  Serial.print(", Dec: ");
+  Serial.print(example, DEC);
+
+  Serial.print(", Hex: ");
+  Serial.print(example, HEX);
+  
+  Serial.print(", Oct: ");
+  Serial.print(example, OCT);
+
+  Serial.print(", Bin: ");
+  Serial.println(example, BIN);
+
+  if(example == 126) {
+    while (true){
+      continue;
+    }
+  }
+
+  example++;
+}
+
+// 5- Modify the program so that it print your name and some greetings.
+
+void setup() {
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  Serial.println("Hello World!");
+  Serial.println("Muhammed Bilal Turk");
+
+  while (true) {
+    continue;
+  }
+}
+

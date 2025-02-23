@@ -1,0 +1,22 @@
+part A:
+	I create two new module called mux_2to1_5bit.v ad mux_2to1_32bit.v
+	I commented-out the line "assign next_pc = " to add "pc + 4;"
+
+part B:
+	I add these lines to SingleCycleMIPS.v file
+		wire [31:0] res;
+		wire zero2;
+		AluModule alu_module2(.src1(pc + 32'b0100), .src2(sign_ext_imm << 2), .alu_control(alu_control), .result(res), .zero(zero2));
+		mux_2to1_32bit mux(.a(res), .b(pc + 32'b0100), .sel(zero & branch));
+	
+
+part C:
+
+	I inserted a case for addi as
+		6'b001000: begin // addi
+		    reg_dst = 1;
+		    alu_src = 1;
+		    reg_write = 1;		
+		    alu_control = 3'b000; // ADD
+		end     
+ 

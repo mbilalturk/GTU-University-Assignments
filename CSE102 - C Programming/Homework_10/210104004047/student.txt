@@ -1,0 +1,6 @@
+Yakup,20000,1984
+Burak,20011,Fahrenheit 451
+Barış,20022,The Giver
+Zeynep,20033,The Book Thief
+Burak,20011,The Alchemist
+Bilal,20044,The Hobbit

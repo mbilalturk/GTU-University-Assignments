@@ -1,0 +1,9 @@
+pID,Type,Name,Brand,Price
+1,d,Ayran,Sutas,20.5
+2,f,Simit,Firin,8.0
+3,a,Silgi,Mono,5.0
+4,d,Sut,Pinar,10.0
+5,f,Ekmek,Bosna,6.0
+6,d,Gazoz,Nıgde,8.0
+7,D,Cay,Caykur,80.0
+

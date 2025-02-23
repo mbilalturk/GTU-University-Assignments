@@ -1,0 +1,45 @@
+#define LED 13
+
+
+void setup() 
+{
+  Serial.begin(9600);
+  Serial.setTimeout(20000);
+  pinMode(LED, OUTPUT);
+}
+
+void loop() 
+{ 
+  while (Serial.available())
+  {
+    char CHAR = (char)Serial.read(); 
+
+    switch (CHAR) 
+    {    
+      case '1':  
+        digitalWrite(LED, HIGH); 
+        break;
+        
+      case '2': 
+        digitalWrite(LED, LOW); 
+        break;
+
+      case '3':
+        for(int i = 0; i < 3; i++) 
+        {
+          digitalWrite(LED, HIGH);
+          delay(350);
+          digitalWrite(LED, LOW);
+          delay(350);
+        }
+        break;
+
+        case '4':
+          int NUMBER;
+          NUMBER = Serial.parseInt();
+          Serial.println("$$$");         
+          Serial.print(NUMBER * NUMBER);    
+          break;
+    }    
+  }
+}

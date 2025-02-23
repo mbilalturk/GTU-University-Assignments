@@ -1,0 +1,172 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\bilal\Desktop\cse-331\exam2\simulation\modelsim
+vAluModule
+IV2D<0eN8E24ZZkDJCZB9f2
+VTMaJe6W2G;`TKFf?VbaeE1
+Z1 dC:\Users\bilal\Desktop\cse-331\exam2\simulation\modelsim
+Z2 w1734594127
+8C:/Users/bilal/Desktop/cse-331/exam2/AluModule.v
+FC:/Users/bilal/Desktop/cse-331/exam2/AluModule.v
+L0 4
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-vlog01compat -work work -O0
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/bilal/Desktop/cse-331/exam2 -O0
+n@alu@module
+!i10b 1
+!s100 Kgon<Q1f=oJU@[U_3Vz1z1
+!s85 0
+!s108 1734595737.757000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/AluModule.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/AluModule.v|
+!s101 -O0
+vControlUnit
+I;h^G973zBG>::JRZVR[?z1
+VC7X^jfnjLh?5lWbb8[[LC2
+R1
+w1734595611
+8C:/Users/bilal/Desktop/cse-331/exam2/ControlUnit.v
+FC:/Users/bilal/Desktop/cse-331/exam2/ControlUnit.v
+L0 4
+R3
+r1
+31
+R4
+R5
+n@control@unit
+!i10b 1
+!s100 6__08E3dPKPcc5<;5D^I:3
+!s85 0
+!s108 1734595737.707000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/ControlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/ControlUnit.v|
+!s101 -O0
+vDataMemory
+IMgGoZPjMRTOo9PV3S0=`M2
+VIF?>>ddan4cU6Oj_j4ETi2
+R1
+R2
+8C:/Users/bilal/Desktop/cse-331/exam2/DataMemory.v
+FC:/Users/bilal/Desktop/cse-331/exam2/DataMemory.v
+L0 3
+R3
+r1
+31
+R4
+R5
+n@data@memory
+!i10b 1
+!s100 AE2>fVggC2Q[>4c]o:Kce3
+!s85 0
+!s108 1734595737.896000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/DataMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/DataMemory.v|
+!s101 -O0
+vInstructionFetch
+I5PPl6FGI9QL^g6ZQMihIb1
+V89SiankMPJn4Vid3Adj6=3
+R1
+R2
+8C:/Users/bilal/Desktop/cse-331/exam2/InstructionFetch.v
+FC:/Users/bilal/Desktop/cse-331/exam2/InstructionFetch.v
+L0 4
+R3
+r1
+31
+R4
+R5
+n@instruction@fetch
+!i10b 1
+!s100 Sn`_l2BBCc^48Wc5G2PI<3
+!s85 0
+!s108 1734595737.848000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/InstructionFetch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/InstructionFetch.v|
+!s101 -O0
+vPcModule
+Iba`Z;aHmk0g>Wc8SzlZzD3
+VbVjEYh@kCPo=4a563;hF@1
+R1
+R2
+8C:/Users/bilal/Desktop/cse-331/exam2/PcModule.v
+FC:/Users/bilal/Desktop/cse-331/exam2/PcModule.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@pc@module
+!i10b 1
+!s100 UbFiRVcc5AkP1GQ3XiBA=2
+!s85 0
+!s108 1734595737.668000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/PcModule.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/PcModule.v|
+!s101 -O0
+vRegisterFile
+IHnP43RcBjhe@g3^2gZ<Bk1
+V8F>PfAQn0HFEL@=:M_7BB1
+R1
+R2
+8C:/Users/bilal/Desktop/cse-331/exam2/RegisterFile.v
+FC:/Users/bilal/Desktop/cse-331/exam2/RegisterFile.v
+L0 2
+R3
+r1
+31
+R4
+R5
+n@register@file
+!i10b 1
+!s100 ;SX3Gi9ShVelIE^Z?U9Yi1
+!s85 0
+!s108 1734595737.802000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/RegisterFile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/RegisterFile.v|
+!s101 -O0
+vSingleCycleMIPS
+ILnT5M4L3Y^=e5L]=JaMN>0
+V@jghf0b5m1FR0zZ>H6:J50
+R1
+w1734595727
+8C:/Users/bilal/Desktop/cse-331/exam2/SingleCycleMIPS.v
+FC:/Users/bilal/Desktop/cse-331/exam2/SingleCycleMIPS.v
+L0 3
+R3
+r1
+31
+R4
+n@single@cycle@m@i@p@s
+R5
+!i10b 1
+!s100 ]?fRS0?8_9mOk3WI^`X>D1
+!s85 0
+!s108 1734595737.597000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/SingleCycleMIPS.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/bilal/Desktop/cse-331/exam2|C:/Users/bilal/Desktop/cse-331/exam2/SingleCycleMIPS.v|
+!s101 -O0
+vTb
+!i10b 1
+!s100 T?AG82kjWGR5Cfm3DP]c71
+IIYVAH2]gWhniJ1D4f3QKl3
+VLAcJ:4e=S?Zm1Pj4n<iDm2
+R1
+R2
+8C:/Users/bilal/Desktop/cse-331/exam2/Tb.v
+FC:/Users/bilal/Desktop/cse-331/exam2/Tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1734595816.849000
+!s107 C:/Users/bilal/Desktop/cse-331/exam2/Tb.v|
+!s90 -reportprogress|300|-work|work|C:/Users/bilal/Desktop/cse-331/exam2/Tb.v|
+!s101 -O0
+o-work work -O0
+n@tb

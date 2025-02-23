@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"cse222.gtu","l":"Directory"},{"p":"cse222.gtu","l":"File"},{"p":"cse222.gtu","l":"FileSystem"},{"p":"cse222.gtu","l":"FileSystemElement"},{"p":"cse222.gtu","l":"Main"}];updateSearchResults();

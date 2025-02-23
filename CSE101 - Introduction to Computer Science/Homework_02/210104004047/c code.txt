@@ -1,0 +1,66 @@
+#include <windows.h>
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include "serialcom.h"
+
+int main(){
+
+    printf("## WELCOME TO GTU ARDUINO ##\n");
+
+    printf("## STUDENT NAME: MUHAMMED BILAL TURK ##\n");
+    
+    printf("\n ARDUINO MENU \n"
+    "(1) TURN ON LED ON ARDUINO\n"
+    "(2) TURN OFF LED ON ARDUINO\n"
+    "(3) FLASH ARDUINO LED 3 TIMES\n"
+    "(4) SEND A NUMBER TO ARDUINO TO COMPUTE SQUARE BY ARDUINO\n"
+    "(0) EXIT\n");
+
+    while(1) {
+        char option[] = {0};
+
+        printf("\n\n PLEASE SELECT: ");
+
+        scanf("%s", option);
+
+        switch(option[0]){
+
+            case '1': 
+                serial_Write(option);
+                break;
+
+            case '2': 
+                serial_Write(option);
+                break;
+
+            case '3': 
+                serial_Write(option);
+                break;
+
+            case '4':
+                serial_Write(option);
+				
+                char number[10];
+                printf("\nENTER A NUMBER: ");
+                scanf("%s", number);
+                serial_Write(number);
+				
+               printf("\nTHE RESULT IS ");
+               serial_Read();
+               break;
+            
+           	
+				
+            case '0':
+              return 0;
+            
+            default:
+              printf("\nPLEASE ENTER A VALID VALUE\n");
+              break;
+        }
+    }
+
+    getch();
+    return 0;
+}

@@ -1,0 +1,15 @@
+Electronic Shop Inventory Report
+Generated on: 25 March 2024
+-----------------------------------------------------------------
+| No. | Category     | Name                 | Price | Quantity |
+-----------------------------------------------------------------
+| 1   | TV           | tv3                  | 450.00$ | 2     |
+| 2   | TV           | tv4                  | 600.00$ | 15    |
+| 3   | Computer     | computer1            | 480.00$ | 12    |
+| 4   | Computer     | computer2            | 520.00$ | 8     |
+| 5   | Headphone    | headphone1           | 400.00$ | 50    |
+| 6   | Headphone    | headphone2           | 1000.00$ | 12    |
+| 7   | Keyboard     | keyboard3            | 500.00$ | 100   |
+| 8   | Smartphone   | smartphone1          | 1000.00$ | 25    |
+| 9   | Smartphone   | smartphone2          | 800.00$ | 30    |
+-----------------------------------------------------------------

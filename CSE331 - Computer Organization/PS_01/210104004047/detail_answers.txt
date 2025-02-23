@@ -1,0 +1,6 @@
+full_adder.v :
+	when calculating carry-out, program anding a and cin instead of xour1_out and cin
+
+subtractor_32bit.v :
+	after calculating the b_complement of the b, this module does not add 1 to b_complement
+

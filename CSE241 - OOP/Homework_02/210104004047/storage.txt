@@ -1,0 +1,2 @@
+FreeSpace: 10484736
+UsedSpace: 1024
